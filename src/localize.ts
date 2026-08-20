@@ -1,0 +1,66 @@
+const strings = {
+  en: {
+    addItem: "Add an item",
+    add: "Add",
+    suggestions: "Suggestions from ICA",
+    searching: "Searching ICA suggestions…",
+    noSuggestions: "No ICA suggestions. You can still add free text.",
+    toBuy: "To buy",
+    completed: "Completed",
+    empty: "Nothing to buy yet",
+    loading: "Loading list…",
+    unavailable: "This list is unavailable.",
+    retry: "Refresh",
+    edit: "Edit",
+    save: "Save",
+    cancel: "Cancel",
+    delete: "Delete",
+    confirm: "Confirm",
+    confirmDelete: "Delete this item?",
+    expired: "This selected article expired. Re-select it or edit the text to add it as free text.",
+    auth: "Sign in to ICA again. Your selected article and text are preserved.",
+    uncertain:
+      "Could not confirm whether the item was added. Refresh the list before trying again. It will not be added as free text.",
+    fallback: "ICA suggestions are unavailable. You can still add free text.",
+    deselect: "Use free text",
+    unauthorized: "You do not have permission to add this selected ICA article.",
+    crudError: "Could not update the shopping list. Please try again.",
+    check: "Check",
+    uncheck: "Uncheck",
+  },
+  sv: {
+    addItem: "Lägg till en vara",
+    add: "Lägg till",
+    suggestions: "Förslag från ICA",
+    searching: "Söker ICA-förslag…",
+    noSuggestions: "Inga ICA-förslag. Du kan fortfarande lägga till fritext.",
+    toBuy: "Att köpa",
+    completed: "Klart",
+    empty: "Inget att köpa ännu",
+    loading: "Laddar listan…",
+    unavailable: "Den här listan är inte tillgänglig.",
+    retry: "Uppdatera",
+    edit: "Redigera",
+    save: "Spara",
+    cancel: "Avbryt",
+    delete: "Ta bort",
+    confirm: "Bekräfta",
+    confirmDelete: "Ta bort den här varan?",
+    expired:
+      "Det valda förslaget har gått ut. Välj det igen eller redigera texten för att lägga till fritext.",
+    auth: "Logga in på ICA igen. Det valda förslaget och texten sparas.",
+    uncertain:
+      "Det gick inte att bekräfta om varan lades till. Uppdatera listan innan du försöker igen. Den läggs inte till som fritext.",
+    fallback: "ICA-förslag är inte tillgängliga. Du kan fortfarande lägga till fritext.",
+    deselect: "Använd fritext",
+    unauthorized: "Du har inte behörighet att lägga till den valda ICA-varan.",
+    crudError: "Det gick inte att uppdatera inköpslistan. Försök igen.",
+    check: "Markera",
+    uncheck: "Avmarkera",
+  },
+} as const;
+
+export type TranslationKey = keyof (typeof strings)["en"];
+export function localize(language: string | undefined, key: TranslationKey): string {
+  return strings[language?.toLowerCase().startsWith("sv") ? "sv" : "en"][key];
+}

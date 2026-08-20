@@ -5,6 +5,8 @@ It works as a standard to-do card for any entity and optionally adds ICA product
 suggestions for entities provided by the separate
 [`ha-ica-shopping-list`](https://github.com/whiteout12/ha-ica-shopping-list) integration.
 
+![ICA Shopping List Card showing active and completed items](docs/images/ica-shopping-list-card.png)
+
 ## Install
 
 Install this repository as a **Dashboard** item through HACS, add the resource if HACS

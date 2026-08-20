@@ -1,0 +1,6 @@
+{
+  "name": "ICA Shopping List Card",
+  "homeassistant": "2024.11.0",
+  "render_readme": true,
+  "filename": "ica-shopping-list-card.js"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "ica-shopping-list-card",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Lovelace card for ICA Shopping List and standard Home Assistant todo entities.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whiteout12/ha-ica-shopping-list-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whiteout12/ha-ica-shopping-list-card/issues"
+  },
+  "homepage": "https://github.com/whiteout12/ha-ica-shopping-list-card#readme",
+  "type": "module",
+  "scripts": {
+    "build": "rollup --config",
+    "dev": "vite --host 0.0.0.0",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:browser": "playwright test",
+    "validate:contract": "ajv validate -s docs/contract-v1.json -d docs/contract-v1-example.json",
+    "lint": "eslint src test --max-warnings=0",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "home-assistant",
+    "lovelace",
+    "hacs",
+    "ica",
+    "shopping-list"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@playwright/test": "^1.47.2",
+    "@axe-core/playwright": "^4.10.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "ajv-cli": "^5.0.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jsdom": "^25.0.0",
+    "lit": "^3.2.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.21.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.6",
+    "vitest": "^2.0.5"
+  }
+}

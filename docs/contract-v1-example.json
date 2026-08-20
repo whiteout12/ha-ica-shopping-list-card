@@ -1,0 +1,20 @@
+{
+  "contract_version": 1,
+  "entity_id": "todo.weekly_shop",
+  "query": "ris",
+  "add_strategy": "ica_add_suggestion",
+  "suggestions": [
+    {
+      "selection_key": "opaque-server-issued-key",
+      "text": "långkornigt ris",
+      "primary": "Långkornigt ris",
+      "secondary": "Ris"
+    },
+    {
+      "selection_key": "another-opaque-server-issued-key",
+      "text": "långkornigt ris",
+      "primary": "Långkornigt ris",
+      "secondary": "Basvaror"
+    }
+  ]
+}

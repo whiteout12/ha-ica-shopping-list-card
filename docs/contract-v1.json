@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ICA Shopping List Card contract v1 browser messages",
+  "definitions": {
+    "suggestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selection_key", "text", "primary"],
+      "properties": {
+        "selection_key": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "primary": { "type": "string", "minLength": 1 },
+        "secondary": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "title": "Suggestions request",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "contract_version", "entity_id", "query", "limit"],
+      "properties": {
+        "type": { "const": "ica_shopping_list/suggestions" },
+        "contract_version": { "const": 1 },
+        "entity_id": { "type": "string", "pattern": "^todo\\." },
+        "query": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 10 }
+      }
+    },
+    {
+      "title": "Selected add request",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "contract_version", "entity_id", "selection_key", "text"],
+      "properties": {
+        "type": { "const": "ica_shopping_list/add_suggestion" },
+        "contract_version": { "const": 1 },
+        "entity_id": { "type": "string", "pattern": "^todo\\." },
+        "selection_key": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
+    {
+      "title": "Suggestions response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "entity_id", "query", "add_strategy", "suggestions"],
+      "properties": {
+        "contract_version": { "const": 1 },
+        "entity_id": { "type": "string", "pattern": "^todo\\." },
+        "query": { "type": "string", "maxLength": 80 },
+        "add_strategy": { "const": "ica_add_suggestion" },
+        "integration_version": { "type": "string" },
+        "suggestions": { "type": "array", "items": { "$ref": "#/definitions/suggestion" } }
+      }
+    }
+  ]
+}

@@ -16,6 +16,8 @@ jobs:
       - run: npm run test
       - run: npm run validate:contract
       - run: npm run build
+      - name: Verify committed HACS bundle is current
+        run: git diff --exit-code -- dist/ica-shopping-list-card.js
       - run: npm run format:check
   hacs:
     runs-on: ubuntu-latest

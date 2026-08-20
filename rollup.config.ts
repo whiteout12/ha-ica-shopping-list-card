@@ -7,7 +7,7 @@ export default {
   output: {
     file: "dist/ica-shopping-list-card.js",
     format: "es",
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     nodeResolve({ browser: true, extensions: [".mjs", ".js", ".json", ".node", ".ts"] }),
